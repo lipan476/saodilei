@@ -42,58 +42,8 @@
 
 
 
-  <script 
-    async 
-    src="https://tganalytics.xyz/index.js" 
-    onload="initAnalytics()" 
-    type="text/javascript"
-  ></script>
-  <script>
-      function initAnalytics() {
-          // console.log("✅ Telegram Analytics SDK 已加载");
-          // window.telegramAnalytics.init({
-          //     token: 'eyJhcHBfbmFtZSI6IkRhZ291U29rb2JhbiIsImFwcF91cmwiOiJodHRwczovL3QubWUvQmVzdE9ubGluZUdhbWVCb3QiLCJhcHBfZG9tYWluIjoiaHR0cHM6Ly9saXBhbjQ3Ni5naXRodWIuaW8vU29rb2JhbkdhbWUvIn0=!rTMu+CulbxbCCsqYSoyqtivjzv4BX5bLay3NbYHVMug=', // 这里填入 "Your token for recording"
-          //     appName: 'SokobanGame', // 你的游戏名称
-          // });
-
-          if (window.telegramAnalytics) {
-            console.log("✅ Telegram Analytics SDK 已加载");
-            window.telegramAnalytics.init({
-                token: 'eyJhcHBfbmFtZSI6Ik1pbmVzd2VlcGVyIiwiYXBwX3VybCI6Imh0dHBzOi8vdC5tZS9NaW5lc3dlZXBlck1hc3RlckJvdCIsImFwcF9kb21haW4iOiJodHRwczovL2xpcGFuNDc2LmdpdGh1Yi5pby9zYW9kaWxlaS8ifQ==!KXJMAaEvlmrYrqeg4VJCGwbXTAysL+bFKAfRTw4o1Es=', // 这里填入 "Your token for recording"
-                appName: 'Minesweeper', // 你的游戏名称
-            });
-        } else {
-            console.error("❌ Telegram Analytics SDK 未加载！");
-        }
-      }
-  </script>
   
   
-
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <script>
-    if (window.Telegram?.WebApp) {
-      const tg = Telegram.WebApp;
-      tg.expand(); // 强制全屏显示
-      tg.enableClosingConfirmation(); // 防止误关闭
-      //console.log("User:", tg.initDataUnsafe.user?.id); // 获取用户信息
-
-      // 添加返回按钮
-      const backBtn = document.createElement('button');
-      backBtn.textContent = 'Back to Bot';
-      backBtn.style.position = 'fixed';
-      backBtn.style.top = '10px';
-      backBtn.style.left = '10px';
-      backBtn.style.zIndex = 9999;
-      backBtn.onclick = () => tg.close();
-      document.body.appendChild(backBtn);
-    } else {
-      alert("Please open this game inside Telegram!");
-    }
-  </script>
-
-  
-
 </head>
 <body>
   <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
